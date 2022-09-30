@@ -1,0 +1,12 @@
+.intro-section{
+    background: aquamarine;
+    margin: 0;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(78deg, #e7ecf1 0%, #e7c9e5 100%);
+}
+
