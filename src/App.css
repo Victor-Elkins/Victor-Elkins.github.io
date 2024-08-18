@@ -1,0 +1,141 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.navbar {
+  background-color: #343a40;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.intro-section {
+  background-color: #f8f9fa;
+  padding: 24rem 0;
+  text-align: center;
+}
+
+.intro-section h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: #343a40;
+}
+
+.intro-section p {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.container-fluid {
+  padding: .25rem;
+}
+
+.container-fluid h2 {
+  color: #343a40;
+}
+
+.Project-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: #343a40;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .navbar a {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* App.css or styles.css */
+
+ul {
+  list-style-position: outside; /* Ensures the list item marker is outside the list item's box */
+  padding-left: 1.5em; /* Adjust the left padding as needed */
+}
+
+ul li {
+  text-align: left; /* Left-align the text inside list items */
+}
+
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  height: 2px;
+  width: 20px;
+  transition: background-color 0.3s;
+}
+
+.navbar-toggler-icon + .navbar-toggler-icon {
+  margin-top: 4px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
