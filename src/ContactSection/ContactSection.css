@@ -1,9 +1,20 @@
-    .contact-section{
-        padding-top: 10%;
-        max-width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+#contact-section {
+  padding-bottom: 5rem;
 }
-h2{
-    padding-bottom: 5%;
+
+.contact-card {
+  padding: 1.5rem;
+}
+
+.contact-card a {
+  color: #2d5bff;
+  font-weight: 600;
+}
+
+.contact-card h3 {
+  color: #081524;
+}
+
+.contact-card p {
+  margin-bottom: 0.75rem;
 }
