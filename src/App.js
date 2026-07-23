@@ -9,7 +9,7 @@ import './App.css';
 
 const navigationLinks = [
   { label: 'Overview', href: '#intro-section' },
-  { label: 'Resume', href: '#resume' },
+  { label: 'Resume', href: '/Resume.pdf', download: 'Victor_Elkins_Resume.pdf' },
   { label: 'Experience', href: '#work-experience' },
   { label: 'Projects', href: '#project-experience' },
   { label: 'Contact', href: '#contact-section' },
@@ -26,7 +26,11 @@ const App = () => (
         <Navbar.Collapse id="portfolio-nav">
           <Nav className="ms-auto">
             {navigationLinks.map((link) => (
-              <Nav.Link key={link.href} href={link.href}>
+              <Nav.Link
+                key={link.href}
+                href={link.href}
+                download={link.download}
+              >
                 {link.label}
               </Nav.Link>
             ))}
