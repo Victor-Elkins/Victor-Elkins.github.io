@@ -50,7 +50,7 @@ export const experience = [
     role: 'Software Engineer Intern',
     period: 'May 2024 – August 2024',
     bullets: [
-      'Designed a Go/Python-based API generator on Azure/OpenShift Kubernetes to automate secure Snowflake API creation, reducing development time by 90%.',
+      'Designed a Go/Python-based API generator on Azure/OpenShift Kubernetes to automate secure Snowflake API creation, significantly reducing API development time.',
       'Engineered automated deployment pipelines using Apache Airflow and Datadog, ensuring secure and reliable deployments within the Azure cloud environment.',
     ],
   },
@@ -67,7 +67,7 @@ export const experience = [
     role: 'Software Engineer Intern',
     period: 'February 2023 – June 2023',
     bullets: [
-      'Designed and deployed an internal image modeling tool using .NET and Azure DevOps, streamlining industrial processes and reducing manual tracking time by 95%.',
+      'Designed and deployed an internal image modeling tool using .NET and Azure DevOps, streamlining industrial processes and reducing manual tracking time.',
     ],
   },
 ];
