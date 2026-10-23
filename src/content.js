@@ -5,9 +5,10 @@ export const profile = {
   role: 'Software Engineer at IBM',
   location: 'United States',
   summary:
-    'I work on the platform behind IBM Cloud Identity and Access Management: ingress and load balancing, ' +
-    'Kubernetes deployments, and the load testing that proves they hold up in production. ' +
-    'I hold an M.S. in Computer Science from Georgia Tech.',
+    "I'm a software engineer on the Context-Based Restrictions (CBR) team in IBM Cloud Identity and Access Management. " +
+    'I build backend features in Go, like dedicated instance support and VPC event handling, and work across the ' +
+    'infrastructure that runs them: Kubernetes deployments, load balancing, and load testing. ' +
+    'I also share on-call duty for our production services, and I hold an M.S. in Computer Science from Georgia Tech.',
   email: 'victor.r.elkins@gmail.com',
   phone: '(281) 323-5559',
   phoneHref: 'tel:+12813235559',
