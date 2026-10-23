@@ -1,5 +1,5 @@
 import React from 'react';
-import { profile, experience, projects, education, skills } from './content';
+import { profile, highlights, experience, projects, education, skills } from './content';
 import './App.css';
 
 const resumeHref = `${process.env.PUBLIC_URL}/${profile.resumeFile}`;
@@ -8,108 +8,144 @@ const sections = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
+  { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
 ];
 
+const Section = ({ id, title, tone, children }) => (
+  <section id={id} className={`section tone-${tone}`}>
+    <h2>{title}</h2>
+    {children}
+  </section>
+);
+
 const EntryHeader = ({ title, subtitle, period }) => (
   <div className="entry-header">
-    <h3>
-      {title}
-      {subtitle && <span className="entry-subtitle">{subtitle}</span>}
-    </h3>
-    <span className="entry-period">{period}</span>
+    <div>
+      <h3>{title}</h3>
+      {subtitle && <p className="entry-subtitle">{subtitle}</p>}
+    </div>
+    <span className="pill">{period}</span>
   </div>
 );
 
 const App = () => (
-  <div className="page">
-    <header className="intro">
-      <nav className="nav" aria-label="Sections">
-        {sections.map((section) => (
-          <a key={section.id} href={`#${section.id}`}>
-            {section.label}
-          </a>
-        ))}
-        <a href={resumeHref} download={profile.resumeDownloadName}>
-          Resume (PDF)
+  <>
+    <header className="topbar">
+      <div className="topbar-inner">
+        <a href="#top" className="brand">
+          Victor Elkins
         </a>
-      </nav>
-      <h1>{profile.name}</h1>
-      <p className="intro-role">
-        {profile.role} · {profile.location}
-      </p>
-      <p className="intro-summary">{profile.summary}</p>
+        <nav aria-label="Sections">
+          {sections.map((section) => (
+            <a key={section.id} href={`#${section.id}`}>
+              {section.label}
+            </a>
+          ))}
+          <a className="nav-resume" href={resumeHref} download={profile.resumeDownloadName}>
+            Resume
+          </a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section id="experience">
-        <h2>Experience</h2>
-        {experience.map((job) => (
-          <article key={job.company} className="entry">
-            <EntryHeader title={job.company} subtitle={job.role} period={job.period} />
-            <ul>
-              {job.bullets.map((bullet, index) => (
-                <li key={index}>{bullet}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
+    <div className="page" id="top">
+      <div className="intro">
+        <p className="intro-role">
+          {profile.role} · {profile.location}
+        </p>
+        <h1>{profile.name}</h1>
+        <p className="intro-summary">{profile.summary}</p>
+        <div className="intro-actions">
+          <a className="button button-primary" href={resumeHref} download={profile.resumeDownloadName}>
+            Download resume
+          </a>
+          <a className="button button-ghost" href={`mailto:${profile.email}`}>
+            Email me
+          </a>
+        </div>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        {projects.map((project) => (
-          <article key={project.title} className="entry">
-            <EntryHeader title={project.title} period={project.period} />
-            <p>{project.summary}</p>
-          </article>
-        ))}
-      </section>
-
-      <section id="education">
-        <h2>Education</h2>
-        {education.map((school) => (
-          <article key={school.school} className="entry">
-            <EntryHeader title={school.school} period={school.period} />
-            <p>
-              {school.degree}
-              {school.detail && <span className="muted"> · {school.detail}</span>}
-            </p>
-          </article>
-        ))}
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <dl className="skills">
-          {skills.map((group) => (
-            <div key={group.label}>
-              <dt>{group.label}</dt>
-              <dd>{group.items}</dd>
-            </div>
+        <ul className="highlights">
+          {highlights.map((item) => (
+            <li key={item.label} className={`highlight tone-${item.tone}`}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </li>
           ))}
-        </dl>
-      </section>
+        </ul>
+      </div>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <dl className="contact">
-          <div>
-            <dt>Email</dt>
-            <dd>
+      <main>
+        <Section id="experience" title="Experience" tone="lavender">
+          <div className="stack">
+            {experience.map((job) => (
+              <article key={job.company} className="card">
+                <EntryHeader title={job.company} subtitle={job.role} period={job.period} />
+                <ul className="bullets">
+                  {job.bullets.map((bullet, index) => (
+                    <li key={index}>{bullet}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="projects" title="Projects" tone="peach">
+          <div className="grid">
+            {projects.map((project) => (
+              <article key={project.title} className="card">
+                <EntryHeader title={project.title} period={project.period} />
+                <p className="card-text">{project.summary}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="education" title="Education" tone="mint">
+          <div className="grid">
+            {education.map((school) => (
+              <article key={school.school} className="card">
+                <EntryHeader title={school.school} period={school.period} />
+                <p className="card-text">{school.degree}</p>
+                {school.detail && <p className="card-detail">{school.detail}</p>}
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="skills" title="Skills" tone="sky">
+          <div className="card skills">
+            {skills.map((group) => (
+              <div key={group.label} className="skill-group">
+                <h3>{group.label}</h3>
+                <ul className="tags">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="contact" title="Contact" tone="butter">
+          <div className="card contact">
+            <div>
+              <span className="contact-label">Email</span>
               <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            </dd>
-          </div>
-          <div>
-            <dt>Phone</dt>
-            <dd>
+            </div>
+            <div>
+              <span className="contact-label">Phone</span>
               <a href={profile.phoneHref}>{profile.phone}</a>
-            </dd>
+            </div>
           </div>
-        </dl>
-      </section>
-    </main>
-  </div>
+        </Section>
+      </main>
+
+      <footer className="footer">© {new Date().getFullYear()} {profile.name}</footer>
+    </div>
+  </>
 );
 
 export default App;

@@ -15,6 +15,14 @@ export const profile = {
   resumeDownloadName: 'Victor_Elkins_Resume.pdf',
 };
 
+// The four cards under the intro. `tone` picks the pastel color.
+export const highlights = [
+  { value: '$250K', label: 'annual infrastructure savings identified', tone: 'mint' },
+  { value: '22', label: 'production clusters in my NLB rollout, across 7 regions', tone: 'lavender' },
+  { value: '6K req/s', label: 'load tests at 3× production peak', tone: 'sky' },
+  { value: 'Award', label: 'IBM Outstanding Technical Achievement', tone: 'peach' },
+];
+
 export const experience = [
   {
     company: 'IBM',
@@ -93,14 +101,14 @@ export const education = [
 ];
 
 export const skills = [
-  { label: 'Languages', items: 'Go, Python, Java, JavaScript/TypeScript, SQL, Bash' },
+  { label: 'Languages', items: ['Go', 'Python', 'Java', 'JavaScript/TypeScript', 'SQL', 'Bash'] },
   {
     label: 'Cloud & DevOps',
-    items: 'Kubernetes/OpenShift, Istio/Envoy, Docker, Helm, Jenkins, Tekton, NLB/ALB, Akamai, Azure',
+    items: ['Kubernetes/OpenShift', 'Istio/Envoy', 'Docker', 'Helm', 'Jenkins', 'Tekton', 'NLB/ALB', 'Akamai', 'Azure'],
   },
   {
     label: 'Data & Observability',
-    items: 'PostgreSQL, PgBouncer, Redis, Snowflake, Sysdig, Datadog, Prometheus/PromQL',
+    items: ['PostgreSQL', 'PgBouncer', 'Redis', 'Snowflake', 'Sysdig', 'Datadog', 'Prometheus/PromQL'],
   },
-  { label: 'Frameworks & Tools', items: 'React, Node.js, PyTorch, Git' },
+  { label: 'Frameworks & Tools', items: ['React', 'Node.js', 'PyTorch', 'Git'] },
 ];
