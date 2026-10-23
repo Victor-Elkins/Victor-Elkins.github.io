@@ -3,7 +3,7 @@
 export const profile = {
   name: 'Victor Elkins',
   role: 'Software Engineer at IBM',
-  location: 'Houston, TX',
+  location: 'United States',
   summary:
     'I work on the platform behind IBM Cloud Identity and Access Management: ingress and load balancing, ' +
     'Kubernetes deployments, and the load testing that proves they hold up in production. ' +
